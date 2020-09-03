@@ -1,8 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-type UnionToIntersection<U> = (U extends any ? (k: U) => void : never) extends (
-  k: infer I
-) => void
-  ? I
-  : never
-
-export type Foo = UnionToIntersection<{ foo: number } | { bar: string }>
+export interface WithArgs<EA extends any[]> {
+  aMethod(...args: EA);
+}
